@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>چک‌لیست مرکز کنترل - نمونه</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="logo">112</div>
+        <div class="title">
+          چک‌لیست مرکز کنترل هماهنگی و عملیات سازمان امداد و نجات 112
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel" id="transfer-section">
+        <h2 class="panel-title">مشخصات ثبت‌کننده و تحویل‌گیرنده</h2>
+        <div class="panel-body form-row">
+          <label class="col-20"
+            >تاریخ و ساعت: <input type="text" placeholder="1402/01/01 - 12:00"
+          /></label>
+          <label class="col-20"
+            >شیفت:
+            <select>
+              <option>بانوان</option>
+              <option>آقایان</option>
+              <option>24 ساعته</option>
+            </select>
+          </label>
+
+          <label class="transfer-label col-20">
+            <div class="label-text">
+              تحویل‌دهنده: <span class="required-star">*</span>
+            </div>
+            <input type="text" id="transfer-from" placeholder="نام" required />
+            <span class="error-msg" id="transfer-from-error"></span>
+          </label>
+
+          <label class="transfer-label col-20">
+            <div class="label-text">
+              تحویل‌گیرنده: <span class="required-star">*</span>
+            </div>
+            <input type="text" id="transfer-to" placeholder="نام" required />
+            <span class="error-msg" id="transfer-to-error"></span>
+          </label>
+
+          <div class="transfer-controls col-10">
+            <button id="transfer-verify" class="btn">ثبت دیسپچ</button>
+            <span class="error-msg" id="transfer-general-error"></span>
+          </div>
+        </div>
+        <div class="progress-row">
+          <div class="small-label">پیشرفت کلی</div>
+          <div class="progress">
+            <div class="progress-bar" id="main-progress" style="width: 33%">
+              33%
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel disabled-section" id="staff-section">
+        <h2 class="panel-title">عوامل حاضر در کشیک</h2>
+        <div class="panel-body form-row">
+          <label>اپراتور یک: <input type="text" /></label>
+          <label>اپراتور دو: <input type="text" /></label>
+          <label>کارمند کشیک: <input type="text" /></label>
+          <label>مدیر کشیک: <input type="text" /></label>
+        </div>
+      </section>
+
+      <section class="panel disabled-section" id="equipment-section">
+        <h2 class="panel-title">وضعیت تجهیزات</h2>
+        <div class="panel-body equipment-grid" id="equipment-grid">
+          <div class="equipment-card" data-equip="112">
+            <div class="equip-name">تلفن 112</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="112" value="ok" checked />
+                سالم</label
+              >
+              <label><input type="radio" name="112" value="bad" /> معیوب</label>
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="vip">
+            <div class="equip-name">تلفن VIP</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="vip" value="ok" checked />
+                سالم</label
+              >
+              <label><input type="radio" name="vip" value="bad" /> معیوب</label>
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="computer">
+            <div class="equip-name">کامپیوتر</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="computer" value="ok" checked />
+                سالم</label
+              >
+              <label
+                ><input type="radio" name="computer" value="bad" /> معیوب</label
+              >
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="printer">
+            <div class="equip-name">پرینتر</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="printer" value="ok" checked />
+                سالم</label
+              >
+              <label
+                ><input type="radio" name="printer" value="bad" /> معیوب</label
+              >
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="internet">
+            <div class="equip-name">اینترنت</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="internet" value="ok" checked />
+                سالم</label
+              >
+              <label
+                ><input type="radio" name="internet" value="bad" /> معیوب</label
+              >
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="mis">
+            <div class="equip-name">سامانه MIS</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="mis" value="ok" checked />
+                سالم</label
+              >
+              <label><input type="radio" name="mis" value="bad" /> معیوب</label>
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="monitoring">
+            <div class="equip-name">دوربین / مانیتورینگ</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="monitoring" value="ok" checked />
+                سالم</label
+              >
+              <label
+                ><input type="radio" name="monitoring" value="bad" />
+                معیوب</label
+              >
+            </div>
+          </div>
+
+          <div class="equipment-card" data-equip="alarm">
+            <div class="equip-name">سیستم آلارم</div>
+            <div class="equip-controls">
+              <label
+                ><input type="radio" name="alarm" value="ok" checked />
+                سالم</label
+              >
+              <label
+                ><input type="radio" name="alarm" value="bad" /> معیوب</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-row">
+          <div class="small-label">وضعیت تجهیزات</div>
+          <div class="progress">
+            <div
+              class="progress-bar green"
+              id="equip-progress"
+              style="width: 100%"
+            >
+              100%
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel disabled-section" id="incidents-section">
+        <h2 class="panel-title">بخش حوادث</h2>
+        <div class="panel-body form-row">
+          <label
+            >تعداد حوادث ثبت‌شده: <input type="number" min="0" value="0"
+          /></label>
+          <label>کد حادثه: <input type="text" /></label>
+          <label>مشکل در حادثه: <input type="checkbox" /></label>
+        </div>
+      </section>
+
+      <footer class="panel small-panel">
+        <div class="panel-body">
+          <small>نسخه نمونه - طراحی شده برای نمایش مشابه تصویر</small>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Global modal popup (hidden by default) -->
+    <div
+      id="global-modal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content" role="document">
+        <button class="modal-close" aria-label="بستن">×</button>
+        <div id="global-modal-message" class="modal-message"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
